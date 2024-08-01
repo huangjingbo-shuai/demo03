@@ -32,7 +32,7 @@ if __name__ == "__main__":
     req = SpawnRequest()
     req.x = 4.5
     req.y = 2.0
-    req.theta = -17
+    req.theta = -3
     req.name = "my_turtle_p"
     try:
         response = client.call(req)

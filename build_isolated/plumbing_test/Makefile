@@ -68,16 +68,6 @@ install/strip/fast: preinstall/fast
 	/usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
 .PHONY : install/strip/fast
 
-# Special rule for the target list_install_components
-list_install_components:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"Unspecified\""
-.PHONY : list_install_components
-
-# Special rule for the target list_install_components
-list_install_components/fast: list_install_components
-
-.PHONY : list_install_components/fast
-
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
@@ -88,6 +78,16 @@ edit_cache:
 edit_cache/fast: edit_cache
 
 .PHONY : edit_cache/fast
+
+# Special rule for the target list_install_components
+list_install_components:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"Unspecified\""
+.PHONY : list_install_components
+
+# Special rule for the target list_install_components
+list_install_components/fast: list_install_components
+
+.PHONY : list_install_components/fast
 
 # Special rule for the target test
 test:
@@ -166,6 +166,19 @@ preinstall/fast:
 depend:
 	$(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
+
+#=============================================================================
+# Target rules for targets named test04_param
+
+# Build rule for target.
+test04_param: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 test04_param
+.PHONY : test04_param
+
+# fast build rule for target.
+test04_param/fast:
+	$(MAKE) -f CMakeFiles/test04_param.dir/build.make CMakeFiles/test04_param.dir/build
+.PHONY : test04_param/fast
 
 #=============================================================================
 # Target rules for targets named test02_sub_pose
@@ -794,6 +807,33 @@ src/test03_service_client.cpp.s:
 	$(MAKE) -f CMakeFiles/test03_service_client.dir/build.make CMakeFiles/test03_service_client.dir/src/test03_service_client.cpp.s
 .PHONY : src/test03_service_client.cpp.s
 
+src/test04_param.o: src/test04_param.cpp.o
+
+.PHONY : src/test04_param.o
+
+# target to build an object file
+src/test04_param.cpp.o:
+	$(MAKE) -f CMakeFiles/test04_param.dir/build.make CMakeFiles/test04_param.dir/src/test04_param.cpp.o
+.PHONY : src/test04_param.cpp.o
+
+src/test04_param.i: src/test04_param.cpp.i
+
+.PHONY : src/test04_param.i
+
+# target to preprocess a source file
+src/test04_param.cpp.i:
+	$(MAKE) -f CMakeFiles/test04_param.dir/build.make CMakeFiles/test04_param.dir/src/test04_param.cpp.i
+.PHONY : src/test04_param.cpp.i
+
+src/test04_param.s: src/test04_param.cpp.s
+
+.PHONY : src/test04_param.s
+
+# target to generate assembly for a file
+src/test04_param.cpp.s:
+	$(MAKE) -f CMakeFiles/test04_param.dir/build.make CMakeFiles/test04_param.dir/src/test04_param.cpp.s
+.PHONY : src/test04_param.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -801,8 +841,9 @@ help:
 	@echo "... clean"
 	@echo "... depend"
 	@echo "... install/strip"
-	@echo "... list_install_components"
 	@echo "... edit_cache"
+	@echo "... list_install_components"
+	@echo "... test04_param"
 	@echo "... test02_sub_pose"
 	@echo "... test01_pub_twist"
 	@echo "... std_srvs_generate_messages_lisp"
@@ -858,6 +899,9 @@ help:
 	@echo "... src/test03_service_client.o"
 	@echo "... src/test03_service_client.i"
 	@echo "... src/test03_service_client.s"
+	@echo "... src/test04_param.o"
+	@echo "... src/test04_param.i"
+	@echo "... src/test04_param.s"
 .PHONY : help
 
 

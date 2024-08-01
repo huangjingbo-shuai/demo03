@@ -19,6 +19,7 @@ set(CMAKE_MAKEFILE_DEPENDS
   "/home/yunxia/demo03/src/plumbing_test/scripts/test01_pub_twist_pub_p.py"
   "/home/yunxia/demo03/src/plumbing_test/scripts/test02_sub_pose_p.py"
   "/home/yunxia/demo03/src/plumbing_test/scripts/test03_service_client_p.py"
+  "/home/yunxia/demo03/src/plumbing_test/scripts/test04_param_p.py"
   "/opt/ros/noetic/share/catkin/cmake/all.cmake"
   "/opt/ros/noetic/share/catkin/cmake/assert.cmake"
   "/opt/ros/noetic/share/catkin/cmake/atomic_configure_file.cmake"
@@ -197,6 +198,8 @@ set(CMAKE_MAKEFILE_PRODUCTS
   "atomic_configure/test02_sub_pose_p.py"
   "catkin_generated/stamps/plumbing_test/test03_service_client_p.py.stamp"
   "atomic_configure/test03_service_client_p.py"
+  "catkin_generated/stamps/plumbing_test/test04_param_p.py.stamp"
+  "atomic_configure/test04_param_p.py"
   "CMakeFiles/CMakeDirectoryInformation.cmake"
   "gtest/CMakeFiles/CMakeDirectoryInformation.cmake"
   "gtest/googlemock/CMakeFiles/CMakeDirectoryInformation.cmake"
@@ -205,6 +208,7 @@ set(CMAKE_MAKEFILE_PRODUCTS
 
 # Dependency information for all targets:
 set(CMAKE_DEPEND_INFO_FILES
+  "CMakeFiles/test04_param.dir/DependInfo.cmake"
   "CMakeFiles/test02_sub_pose.dir/DependInfo.cmake"
   "CMakeFiles/test01_pub_twist.dir/DependInfo.cmake"
   "CMakeFiles/std_srvs_generate_messages_lisp.dir/DependInfo.cmake"

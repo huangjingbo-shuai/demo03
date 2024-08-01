@@ -53,6 +53,7 @@ CMAKE_BINARY_DIR = /home/yunxia/demo03/build_isolated/plumbing_test
 # Directory level rules for the build root directory
 
 # The main recursive "all" target.
+all: CMakeFiles/test04_param.dir/all
 all: CMakeFiles/test02_sub_pose.dir/all
 all: CMakeFiles/test01_pub_twist.dir/all
 all: CMakeFiles/test03_service_client.dir/all
@@ -66,6 +67,7 @@ preinstall: gtest/preinstall
 .PHONY : preinstall
 
 # The main recursive "clean" target.
+clean: CMakeFiles/test04_param.dir/clean
 clean: CMakeFiles/test02_sub_pose.dir/clean
 clean: CMakeFiles/test01_pub_twist.dir/clean
 clean: CMakeFiles/std_srvs_generate_messages_lisp.dir/clean
@@ -164,6 +166,62 @@ gtest/googletest/clean: gtest/googletest/CMakeFiles/gtest_main.dir/clean
 gtest/googletest/clean: gtest/googletest/CMakeFiles/gtest.dir/clean
 
 .PHONY : gtest/googletest/clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/test04_param.dir
+
+# All Build rule for target.
+CMakeFiles/test04_param.dir/all: CMakeFiles/std_srvs_generate_messages_lisp.dir/all
+CMakeFiles/test04_param.dir/all: CMakeFiles/std_srvs_generate_messages_eus.dir/all
+CMakeFiles/test04_param.dir/all: CMakeFiles/turtlesim_generate_messages_py.dir/all
+CMakeFiles/test04_param.dir/all: CMakeFiles/std_msgs_generate_messages_lisp.dir/all
+CMakeFiles/test04_param.dir/all: CMakeFiles/std_srvs_generate_messages_nodejs.dir/all
+CMakeFiles/test04_param.dir/all: CMakeFiles/std_msgs_generate_messages_eus.dir/all
+CMakeFiles/test04_param.dir/all: CMakeFiles/geometry_msgs_generate_messages_lisp.dir/all
+CMakeFiles/test04_param.dir/all: CMakeFiles/roscpp_generate_messages_nodejs.dir/all
+CMakeFiles/test04_param.dir/all: CMakeFiles/std_srvs_generate_messages_py.dir/all
+CMakeFiles/test04_param.dir/all: CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/all
+CMakeFiles/test04_param.dir/all: CMakeFiles/std_srvs_generate_messages_cpp.dir/all
+CMakeFiles/test04_param.dir/all: CMakeFiles/std_msgs_generate_messages_cpp.dir/all
+CMakeFiles/test04_param.dir/all: CMakeFiles/turtlesim_generate_messages_nodejs.dir/all
+CMakeFiles/test04_param.dir/all: CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/all
+CMakeFiles/test04_param.dir/all: CMakeFiles/rosgraph_msgs_generate_messages_py.dir/all
+CMakeFiles/test04_param.dir/all: CMakeFiles/geometry_msgs_generate_messages_cpp.dir/all
+CMakeFiles/test04_param.dir/all: CMakeFiles/turtlesim_generate_messages_cpp.dir/all
+CMakeFiles/test04_param.dir/all: CMakeFiles/roscpp_generate_messages_lisp.dir/all
+CMakeFiles/test04_param.dir/all: CMakeFiles/geometry_msgs_generate_messages_py.dir/all
+CMakeFiles/test04_param.dir/all: CMakeFiles/roscpp_generate_messages_cpp.dir/all
+CMakeFiles/test04_param.dir/all: CMakeFiles/geometry_msgs_generate_messages_eus.dir/all
+CMakeFiles/test04_param.dir/all: CMakeFiles/std_msgs_generate_messages_nodejs.dir/all
+CMakeFiles/test04_param.dir/all: CMakeFiles/std_msgs_generate_messages_py.dir/all
+CMakeFiles/test04_param.dir/all: CMakeFiles/roscpp_generate_messages_eus.dir/all
+CMakeFiles/test04_param.dir/all: CMakeFiles/roscpp_generate_messages_py.dir/all
+CMakeFiles/test04_param.dir/all: CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/all
+CMakeFiles/test04_param.dir/all: CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/all
+CMakeFiles/test04_param.dir/all: CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/all
+CMakeFiles/test04_param.dir/all: CMakeFiles/turtlesim_generate_messages_eus.dir/all
+CMakeFiles/test04_param.dir/all: CMakeFiles/turtlesim_generate_messages_lisp.dir/all
+	$(MAKE) -f CMakeFiles/test04_param.dir/build.make CMakeFiles/test04_param.dir/depend
+	$(MAKE) -f CMakeFiles/test04_param.dir/build.make CMakeFiles/test04_param.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/yunxia/demo03/build_isolated/plumbing_test/CMakeFiles --progress-num=15,16 "Built target test04_param"
+.PHONY : CMakeFiles/test04_param.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/test04_param.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/yunxia/demo03/build_isolated/plumbing_test/CMakeFiles 2
+	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/test04_param.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/yunxia/demo03/build_isolated/plumbing_test/CMakeFiles 0
+.PHONY : CMakeFiles/test04_param.dir/rule
+
+# Convenience name for target.
+test04_param: CMakeFiles/test04_param.dir/rule
+
+.PHONY : test04_param
+
+# clean rule for target.
+CMakeFiles/test04_param.dir/clean:
+	$(MAKE) -f CMakeFiles/test04_param.dir/build.make CMakeFiles/test04_param.dir/clean
+.PHONY : CMakeFiles/test04_param.dir/clean
 
 #=============================================================================
 # Target rules for target CMakeFiles/test02_sub_pose.dir
