@@ -68,18 +68,6 @@ install/strip/fast: preinstall/fast
 	/usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
 .PHONY : install/strip/fast
 
-# Special rule for the target install
-install: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
-	/usr/bin/cmake -P cmake_install.cmake
-.PHONY : install
-
-# Special rule for the target install
-install/fast: preinstall/fast
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
-	/usr/bin/cmake -P cmake_install.cmake
-.PHONY : install/fast
-
 # Special rule for the target list_install_components
 list_install_components:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"Unspecified\""
@@ -89,6 +77,39 @@ list_install_components:
 list_install_components/fast: list_install_components
 
 .PHONY : list_install_components/fast
+
+# Special rule for the target edit_cache
+edit_cache:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
+	/usr/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+.PHONY : edit_cache
+
+# Special rule for the target edit_cache
+edit_cache/fast: edit_cache
+
+.PHONY : edit_cache/fast
+
+# Special rule for the target test
+test:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running tests..."
+	/usr/bin/ctest --force-new-ctest-process $(ARGS)
+.PHONY : test
+
+# Special rule for the target test
+test/fast: test
+
+.PHONY : test/fast
+
+# Special rule for the target rebuild_cache
+rebuild_cache:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
+	/usr/bin/cmake -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+.PHONY : rebuild_cache
+
+# Special rule for the target rebuild_cache
+rebuild_cache/fast: rebuild_cache
+
+.PHONY : rebuild_cache/fast
 
 # Special rule for the target install/local
 install/local: preinstall
@@ -102,38 +123,17 @@ install/local/fast: preinstall/fast
 	/usr/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
 .PHONY : install/local/fast
 
-# Special rule for the target test
-test:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running tests..."
-	/usr/bin/ctest --force-new-ctest-process $(ARGS)
-.PHONY : test
+# Special rule for the target install
+install: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
+	/usr/bin/cmake -P cmake_install.cmake
+.PHONY : install
 
-# Special rule for the target test
-test/fast: test
-
-.PHONY : test/fast
-
-# Special rule for the target edit_cache
-edit_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-	/usr/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
-.PHONY : edit_cache
-
-# Special rule for the target edit_cache
-edit_cache/fast: edit_cache
-
-.PHONY : edit_cache/fast
-
-# Special rule for the target rebuild_cache
-rebuild_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	/usr/bin/cmake -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
-.PHONY : rebuild_cache
-
-# Special rule for the target rebuild_cache
-rebuild_cache/fast: rebuild_cache
-
-.PHONY : rebuild_cache/fast
+# Special rule for the target install
+install/fast: preinstall/fast
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
+	/usr/bin/cmake -P cmake_install.cmake
+.PHONY : install/fast
 
 # The main all target
 all: cmake_check_build_system
@@ -168,6 +168,71 @@ depend:
 .PHONY : depend
 
 #=============================================================================
+# Target rules for targets named test02_sub_pose
+
+# Build rule for target.
+test02_sub_pose: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 test02_sub_pose
+.PHONY : test02_sub_pose
+
+# fast build rule for target.
+test02_sub_pose/fast:
+	$(MAKE) -f CMakeFiles/test02_sub_pose.dir/build.make CMakeFiles/test02_sub_pose.dir/build
+.PHONY : test02_sub_pose/fast
+
+#=============================================================================
+# Target rules for targets named test01_pub_twist
+
+# Build rule for target.
+test01_pub_twist: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 test01_pub_twist
+.PHONY : test01_pub_twist
+
+# fast build rule for target.
+test01_pub_twist/fast:
+	$(MAKE) -f CMakeFiles/test01_pub_twist.dir/build.make CMakeFiles/test01_pub_twist.dir/build
+.PHONY : test01_pub_twist/fast
+
+#=============================================================================
+# Target rules for targets named std_srvs_generate_messages_lisp
+
+# Build rule for target.
+std_srvs_generate_messages_lisp: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 std_srvs_generate_messages_lisp
+.PHONY : std_srvs_generate_messages_lisp
+
+# fast build rule for target.
+std_srvs_generate_messages_lisp/fast:
+	$(MAKE) -f CMakeFiles/std_srvs_generate_messages_lisp.dir/build.make CMakeFiles/std_srvs_generate_messages_lisp.dir/build
+.PHONY : std_srvs_generate_messages_lisp/fast
+
+#=============================================================================
+# Target rules for targets named std_srvs_generate_messages_eus
+
+# Build rule for target.
+std_srvs_generate_messages_eus: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 std_srvs_generate_messages_eus
+.PHONY : std_srvs_generate_messages_eus
+
+# fast build rule for target.
+std_srvs_generate_messages_eus/fast:
+	$(MAKE) -f CMakeFiles/std_srvs_generate_messages_eus.dir/build.make CMakeFiles/std_srvs_generate_messages_eus.dir/build
+.PHONY : std_srvs_generate_messages_eus/fast
+
+#=============================================================================
+# Target rules for targets named turtlesim_generate_messages_py
+
+# Build rule for target.
+turtlesim_generate_messages_py: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 turtlesim_generate_messages_py
+.PHONY : turtlesim_generate_messages_py
+
+# fast build rule for target.
+turtlesim_generate_messages_py/fast:
+	$(MAKE) -f CMakeFiles/turtlesim_generate_messages_py.dir/build.make CMakeFiles/turtlesim_generate_messages_py.dir/build
+.PHONY : turtlesim_generate_messages_py/fast
+
+#=============================================================================
 # Target rules for targets named std_msgs_generate_messages_lisp
 
 # Build rule for target.
@@ -179,6 +244,19 @@ std_msgs_generate_messages_lisp: cmake_check_build_system
 std_msgs_generate_messages_lisp/fast:
 	$(MAKE) -f CMakeFiles/std_msgs_generate_messages_lisp.dir/build.make CMakeFiles/std_msgs_generate_messages_lisp.dir/build
 .PHONY : std_msgs_generate_messages_lisp/fast
+
+#=============================================================================
+# Target rules for targets named std_srvs_generate_messages_nodejs
+
+# Build rule for target.
+std_srvs_generate_messages_nodejs: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 std_srvs_generate_messages_nodejs
+.PHONY : std_srvs_generate_messages_nodejs
+
+# fast build rule for target.
+std_srvs_generate_messages_nodejs/fast:
+	$(MAKE) -f CMakeFiles/std_srvs_generate_messages_nodejs.dir/build.make CMakeFiles/std_srvs_generate_messages_nodejs.dir/build
+.PHONY : std_srvs_generate_messages_nodejs/fast
 
 #=============================================================================
 # Target rules for targets named run_tests
@@ -233,6 +311,58 @@ roscpp_generate_messages_nodejs/fast:
 .PHONY : roscpp_generate_messages_nodejs/fast
 
 #=============================================================================
+# Target rules for targets named test03_service_client
+
+# Build rule for target.
+test03_service_client: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 test03_service_client
+.PHONY : test03_service_client
+
+# fast build rule for target.
+test03_service_client/fast:
+	$(MAKE) -f CMakeFiles/test03_service_client.dir/build.make CMakeFiles/test03_service_client.dir/build
+.PHONY : test03_service_client/fast
+
+#=============================================================================
+# Target rules for targets named std_srvs_generate_messages_py
+
+# Build rule for target.
+std_srvs_generate_messages_py: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 std_srvs_generate_messages_py
+.PHONY : std_srvs_generate_messages_py
+
+# fast build rule for target.
+std_srvs_generate_messages_py/fast:
+	$(MAKE) -f CMakeFiles/std_srvs_generate_messages_py.dir/build.make CMakeFiles/std_srvs_generate_messages_py.dir/build
+.PHONY : std_srvs_generate_messages_py/fast
+
+#=============================================================================
+# Target rules for targets named rosgraph_msgs_generate_messages_cpp
+
+# Build rule for target.
+rosgraph_msgs_generate_messages_cpp: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 rosgraph_msgs_generate_messages_cpp
+.PHONY : rosgraph_msgs_generate_messages_cpp
+
+# fast build rule for target.
+rosgraph_msgs_generate_messages_cpp/fast:
+	$(MAKE) -f CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/build.make CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/build
+.PHONY : rosgraph_msgs_generate_messages_cpp/fast
+
+#=============================================================================
+# Target rules for targets named std_srvs_generate_messages_cpp
+
+# Build rule for target.
+std_srvs_generate_messages_cpp: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 std_srvs_generate_messages_cpp
+.PHONY : std_srvs_generate_messages_cpp
+
+# fast build rule for target.
+std_srvs_generate_messages_cpp/fast:
+	$(MAKE) -f CMakeFiles/std_srvs_generate_messages_cpp.dir/build.make CMakeFiles/std_srvs_generate_messages_cpp.dir/build
+.PHONY : std_srvs_generate_messages_cpp/fast
+
+#=============================================================================
 # Target rules for targets named std_msgs_generate_messages_cpp
 
 # Build rule for target.
@@ -246,6 +376,19 @@ std_msgs_generate_messages_cpp/fast:
 .PHONY : std_msgs_generate_messages_cpp/fast
 
 #=============================================================================
+# Target rules for targets named turtlesim_generate_messages_nodejs
+
+# Build rule for target.
+turtlesim_generate_messages_nodejs: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 turtlesim_generate_messages_nodejs
+.PHONY : turtlesim_generate_messages_nodejs
+
+# fast build rule for target.
+turtlesim_generate_messages_nodejs/fast:
+	$(MAKE) -f CMakeFiles/turtlesim_generate_messages_nodejs.dir/build.make CMakeFiles/turtlesim_generate_messages_nodejs.dir/build
+.PHONY : turtlesim_generate_messages_nodejs/fast
+
+#=============================================================================
 # Target rules for targets named geometry_msgs_generate_messages_nodejs
 
 # Build rule for target.
@@ -257,19 +400,6 @@ geometry_msgs_generate_messages_nodejs: cmake_check_build_system
 geometry_msgs_generate_messages_nodejs/fast:
 	$(MAKE) -f CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/build.make CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/build
 .PHONY : geometry_msgs_generate_messages_nodejs/fast
-
-#=============================================================================
-# Target rules for targets named geometry_msgs_generate_messages_cpp
-
-# Build rule for target.
-geometry_msgs_generate_messages_cpp: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 geometry_msgs_generate_messages_cpp
-.PHONY : geometry_msgs_generate_messages_cpp
-
-# fast build rule for target.
-geometry_msgs_generate_messages_cpp/fast:
-	$(MAKE) -f CMakeFiles/geometry_msgs_generate_messages_cpp.dir/build.make CMakeFiles/geometry_msgs_generate_messages_cpp.dir/build
-.PHONY : geometry_msgs_generate_messages_cpp/fast
 
 #=============================================================================
 # Target rules for targets named rosgraph_msgs_generate_messages_py
@@ -296,6 +426,32 @@ doxygen: cmake_check_build_system
 doxygen/fast:
 	$(MAKE) -f CMakeFiles/doxygen.dir/build.make CMakeFiles/doxygen.dir/build
 .PHONY : doxygen/fast
+
+#=============================================================================
+# Target rules for targets named geometry_msgs_generate_messages_cpp
+
+# Build rule for target.
+geometry_msgs_generate_messages_cpp: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 geometry_msgs_generate_messages_cpp
+.PHONY : geometry_msgs_generate_messages_cpp
+
+# fast build rule for target.
+geometry_msgs_generate_messages_cpp/fast:
+	$(MAKE) -f CMakeFiles/geometry_msgs_generate_messages_cpp.dir/build.make CMakeFiles/geometry_msgs_generate_messages_cpp.dir/build
+.PHONY : geometry_msgs_generate_messages_cpp/fast
+
+#=============================================================================
+# Target rules for targets named turtlesim_generate_messages_cpp
+
+# Build rule for target.
+turtlesim_generate_messages_cpp: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 turtlesim_generate_messages_cpp
+.PHONY : turtlesim_generate_messages_cpp
+
+# fast build rule for target.
+turtlesim_generate_messages_cpp/fast:
+	$(MAKE) -f CMakeFiles/turtlesim_generate_messages_cpp.dir/build.make CMakeFiles/turtlesim_generate_messages_cpp.dir/build
+.PHONY : turtlesim_generate_messages_cpp/fast
 
 #=============================================================================
 # Target rules for targets named roscpp_generate_messages_lisp
@@ -402,6 +558,19 @@ std_msgs_generate_messages_py/fast:
 .PHONY : std_msgs_generate_messages_py/fast
 
 #=============================================================================
+# Target rules for targets named roscpp_generate_messages_eus
+
+# Build rule for target.
+roscpp_generate_messages_eus: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 roscpp_generate_messages_eus
+.PHONY : roscpp_generate_messages_eus
+
+# fast build rule for target.
+roscpp_generate_messages_eus/fast:
+	$(MAKE) -f CMakeFiles/roscpp_generate_messages_eus.dir/build.make CMakeFiles/roscpp_generate_messages_eus.dir/build
+.PHONY : roscpp_generate_messages_eus/fast
+
+#=============================================================================
 # Target rules for targets named roscpp_generate_messages_py
 
 # Build rule for target.
@@ -467,43 +636,30 @@ rosgraph_msgs_generate_messages_nodejs/fast:
 .PHONY : rosgraph_msgs_generate_messages_nodejs/fast
 
 #=============================================================================
-# Target rules for targets named test01_pub_twist
+# Target rules for targets named turtlesim_generate_messages_eus
 
 # Build rule for target.
-test01_pub_twist: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 test01_pub_twist
-.PHONY : test01_pub_twist
+turtlesim_generate_messages_eus: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 turtlesim_generate_messages_eus
+.PHONY : turtlesim_generate_messages_eus
 
 # fast build rule for target.
-test01_pub_twist/fast:
-	$(MAKE) -f CMakeFiles/test01_pub_twist.dir/build.make CMakeFiles/test01_pub_twist.dir/build
-.PHONY : test01_pub_twist/fast
+turtlesim_generate_messages_eus/fast:
+	$(MAKE) -f CMakeFiles/turtlesim_generate_messages_eus.dir/build.make CMakeFiles/turtlesim_generate_messages_eus.dir/build
+.PHONY : turtlesim_generate_messages_eus/fast
 
 #=============================================================================
-# Target rules for targets named rosgraph_msgs_generate_messages_cpp
+# Target rules for targets named turtlesim_generate_messages_lisp
 
 # Build rule for target.
-rosgraph_msgs_generate_messages_cpp: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 rosgraph_msgs_generate_messages_cpp
-.PHONY : rosgraph_msgs_generate_messages_cpp
+turtlesim_generate_messages_lisp: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 turtlesim_generate_messages_lisp
+.PHONY : turtlesim_generate_messages_lisp
 
 # fast build rule for target.
-rosgraph_msgs_generate_messages_cpp/fast:
-	$(MAKE) -f CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/build.make CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/build
-.PHONY : rosgraph_msgs_generate_messages_cpp/fast
-
-#=============================================================================
-# Target rules for targets named roscpp_generate_messages_eus
-
-# Build rule for target.
-roscpp_generate_messages_eus: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 roscpp_generate_messages_eus
-.PHONY : roscpp_generate_messages_eus
-
-# fast build rule for target.
-roscpp_generate_messages_eus/fast:
-	$(MAKE) -f CMakeFiles/roscpp_generate_messages_eus.dir/build.make CMakeFiles/roscpp_generate_messages_eus.dir/build
-.PHONY : roscpp_generate_messages_eus/fast
+turtlesim_generate_messages_lisp/fast:
+	$(MAKE) -f CMakeFiles/turtlesim_generate_messages_lisp.dir/build.make CMakeFiles/turtlesim_generate_messages_lisp.dir/build
+.PHONY : turtlesim_generate_messages_lisp/fast
 
 #=============================================================================
 # Target rules for targets named gmock_main
@@ -584,6 +740,60 @@ src/test01_pub_twist.cpp.s:
 	$(MAKE) -f CMakeFiles/test01_pub_twist.dir/build.make CMakeFiles/test01_pub_twist.dir/src/test01_pub_twist.cpp.s
 .PHONY : src/test01_pub_twist.cpp.s
 
+src/test02_sub_pose.o: src/test02_sub_pose.cpp.o
+
+.PHONY : src/test02_sub_pose.o
+
+# target to build an object file
+src/test02_sub_pose.cpp.o:
+	$(MAKE) -f CMakeFiles/test02_sub_pose.dir/build.make CMakeFiles/test02_sub_pose.dir/src/test02_sub_pose.cpp.o
+.PHONY : src/test02_sub_pose.cpp.o
+
+src/test02_sub_pose.i: src/test02_sub_pose.cpp.i
+
+.PHONY : src/test02_sub_pose.i
+
+# target to preprocess a source file
+src/test02_sub_pose.cpp.i:
+	$(MAKE) -f CMakeFiles/test02_sub_pose.dir/build.make CMakeFiles/test02_sub_pose.dir/src/test02_sub_pose.cpp.i
+.PHONY : src/test02_sub_pose.cpp.i
+
+src/test02_sub_pose.s: src/test02_sub_pose.cpp.s
+
+.PHONY : src/test02_sub_pose.s
+
+# target to generate assembly for a file
+src/test02_sub_pose.cpp.s:
+	$(MAKE) -f CMakeFiles/test02_sub_pose.dir/build.make CMakeFiles/test02_sub_pose.dir/src/test02_sub_pose.cpp.s
+.PHONY : src/test02_sub_pose.cpp.s
+
+src/test03_service_client.o: src/test03_service_client.cpp.o
+
+.PHONY : src/test03_service_client.o
+
+# target to build an object file
+src/test03_service_client.cpp.o:
+	$(MAKE) -f CMakeFiles/test03_service_client.dir/build.make CMakeFiles/test03_service_client.dir/src/test03_service_client.cpp.o
+.PHONY : src/test03_service_client.cpp.o
+
+src/test03_service_client.i: src/test03_service_client.cpp.i
+
+.PHONY : src/test03_service_client.i
+
+# target to preprocess a source file
+src/test03_service_client.cpp.i:
+	$(MAKE) -f CMakeFiles/test03_service_client.dir/build.make CMakeFiles/test03_service_client.dir/src/test03_service_client.cpp.i
+.PHONY : src/test03_service_client.cpp.i
+
+src/test03_service_client.s: src/test03_service_client.cpp.s
+
+.PHONY : src/test03_service_client.s
+
+# target to generate assembly for a file
+src/test03_service_client.cpp.s:
+	$(MAKE) -f CMakeFiles/test03_service_client.dir/build.make CMakeFiles/test03_service_client.dir/src/test03_service_client.cpp.s
+.PHONY : src/test03_service_client.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -591,18 +801,31 @@ help:
 	@echo "... clean"
 	@echo "... depend"
 	@echo "... install/strip"
-	@echo "... install"
 	@echo "... list_install_components"
+	@echo "... edit_cache"
+	@echo "... test02_sub_pose"
+	@echo "... test01_pub_twist"
+	@echo "... std_srvs_generate_messages_lisp"
+	@echo "... std_srvs_generate_messages_eus"
+	@echo "... turtlesim_generate_messages_py"
 	@echo "... std_msgs_generate_messages_lisp"
+	@echo "... std_srvs_generate_messages_nodejs"
 	@echo "... run_tests"
 	@echo "... std_msgs_generate_messages_eus"
 	@echo "... geometry_msgs_generate_messages_lisp"
 	@echo "... roscpp_generate_messages_nodejs"
+	@echo "... test"
+	@echo "... test03_service_client"
+	@echo "... std_srvs_generate_messages_py"
+	@echo "... rosgraph_msgs_generate_messages_cpp"
+	@echo "... std_srvs_generate_messages_cpp"
 	@echo "... std_msgs_generate_messages_cpp"
+	@echo "... turtlesim_generate_messages_nodejs"
 	@echo "... geometry_msgs_generate_messages_nodejs"
-	@echo "... geometry_msgs_generate_messages_cpp"
 	@echo "... rosgraph_msgs_generate_messages_py"
 	@echo "... doxygen"
+	@echo "... geometry_msgs_generate_messages_cpp"
+	@echo "... turtlesim_generate_messages_cpp"
 	@echo "... roscpp_generate_messages_lisp"
 	@echo "... clean_test_results"
 	@echo "... tests"
@@ -611,18 +834,17 @@ help:
 	@echo "... geometry_msgs_generate_messages_eus"
 	@echo "... std_msgs_generate_messages_nodejs"
 	@echo "... std_msgs_generate_messages_py"
+	@echo "... rebuild_cache"
+	@echo "... roscpp_generate_messages_eus"
 	@echo "... roscpp_generate_messages_py"
 	@echo "... install/local"
 	@echo "... rosgraph_msgs_generate_messages_eus"
 	@echo "... download_extra_data"
 	@echo "... rosgraph_msgs_generate_messages_lisp"
 	@echo "... rosgraph_msgs_generate_messages_nodejs"
-	@echo "... test01_pub_twist"
-	@echo "... rosgraph_msgs_generate_messages_cpp"
-	@echo "... test"
-	@echo "... edit_cache"
-	@echo "... roscpp_generate_messages_eus"
-	@echo "... rebuild_cache"
+	@echo "... install"
+	@echo "... turtlesim_generate_messages_eus"
+	@echo "... turtlesim_generate_messages_lisp"
 	@echo "... gmock_main"
 	@echo "... gmock"
 	@echo "... gtest_main"
@@ -630,6 +852,12 @@ help:
 	@echo "... src/test01_pub_twist.o"
 	@echo "... src/test01_pub_twist.i"
 	@echo "... src/test01_pub_twist.s"
+	@echo "... src/test02_sub_pose.o"
+	@echo "... src/test02_sub_pose.i"
+	@echo "... src/test02_sub_pose.s"
+	@echo "... src/test03_service_client.o"
+	@echo "... src/test03_service_client.i"
+	@echo "... src/test03_service_client.s"
 .PHONY : help
 
 

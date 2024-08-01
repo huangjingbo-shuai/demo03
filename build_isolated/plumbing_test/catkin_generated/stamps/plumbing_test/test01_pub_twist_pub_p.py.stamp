@@ -32,5 +32,5 @@ if __name__=="__main__":
     twist.angular.z=1
     #循环发布
     while not rospy.is_shutdown():
-    pub.publish(twist)
-    rate.sleep()
+        pub.publish(twist)
+        rate.sleep()

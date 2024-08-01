@@ -14,7 +14,6 @@ from geometry_msgs.msg import Twist
 """
 
 if __name__=="__main__":
-{
 # 2.初始化ros节点
     rospy.init_node("my_control_p")
 # 3.创建发布者对象
@@ -25,15 +24,13 @@ if __name__=="__main__":
     rate=rospy.Rate(10)
     #创建速度消息
     twist=Twist()
-    twist.linear.x=1.0;
-    twist.linear.y=0;
-    twist.linear.z=0;
-    twist.angular.x=0;
-    twist.angular.y=0;
-    twist.angular.z=1;
+    twist.linear.x=1.0
+    twist.linear.y=0
+    twist.linear.z=0
+    twist.angular.x=0
+    twist.angular.y=0
+    twist.angular.z=1
     #循环发布
     while not rospy.is_shutdown():
-    pub.publish(twist)
-    rate.sleep()
-
-}
+        pub.publish(twist)
+        rate.sleep()

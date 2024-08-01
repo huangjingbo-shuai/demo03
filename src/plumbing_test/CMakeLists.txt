@@ -12,6 +12,7 @@ find_package(catkin REQUIRED COMPONENTS
   roscpp
   rospy
   std_msgs
+  turtlesim
 )
 
 ## System dependencies are found with CMake's conventions
@@ -135,6 +136,10 @@ include_directories(
 ## With catkin_make all packages are built within a single CMake context
 ## The recommended prefix ensures that target names across packages don't collide
 add_executable(test01_pub_twist src/test01_pub_twist.cpp)
+add_executable(test02_sub_pose src/test02_sub_pose.cpp)
+add_executable(test03_service_client src/test03_service_client.cpp)
+
+
 
 ## Rename C++ executable without prefix
 ## The above recommended prefix causes long target names, the following renames the
@@ -145,12 +150,20 @@ add_executable(test01_pub_twist src/test01_pub_twist.cpp)
 ## Add cmake target dependencies of the executable
 ## same as for the library above
 add_dependencies(test01_pub_twist ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
+add_dependencies(test02_sub_pose ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
+add_dependencies(test03_service_client ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
 
 ## Specify libraries to link a library or executable target against
 target_link_libraries(test01_pub_twist
   ${catkin_LIBRARIES}
 )
+target_link_libraries(test02_sub_pose
+  ${catkin_LIBRARIES}
+)
 
+target_link_libraries(test03_service_client
+  ${catkin_LIBRARIES}
+)
 #############
 ## Install ##
 #############
@@ -162,6 +175,10 @@ target_link_libraries(test01_pub_twist
 ## in contrast to setup.py, you can choose the destination
 catkin_install_python(PROGRAMS
   scripts/test01_pub_twist_pub_p.py
+  scripts/test02_sub_pose_p.py
+  scripts/test03_service_client_p.py
+
+
   DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
 )
 
