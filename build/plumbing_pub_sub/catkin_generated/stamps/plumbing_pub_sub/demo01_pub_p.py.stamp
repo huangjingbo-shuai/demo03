@@ -23,8 +23,10 @@
 #1.导包 
 import os
 import sys  
+# sys.path.insert(0,"/home/yunxia/demo03/src/plumbing_pub_sub/scripts")
 path=os.path.abspath(".")
-sys.path.insert(0,path + "/home/yunxia/demo03/src/plumbing_pub_sub/scripts")
+sys.path.insert(0,path+"/src/plumbing_pub_sub/scripts")
+
 import rospy
 from std_msgs.msg import String
 import tools

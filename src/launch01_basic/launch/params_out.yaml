@@ -1,0 +1,35 @@
+bg_B: 255
+bg_G: 100
+bg_R: 100
+my_turtle:
+  background_b: 255
+  background_g: 86
+  background_r: 69
+  bg_B: 255
+  bg_G: 100
+  bg_R: 100
+  paramBA: 10.34
+  param_B: 10.34
+param_A: 100
+rosdistro: 'noetic
+
+  '
+roslaunch:
+  uris:
+    host_hjb__33607: http://hjb:33607/
+    host_hjb__33635: http://hjb:33635/
+    host_hjb__33951: http://hjb:33951/
+    host_hjb__36365: http://hjb:36365/
+    host_hjb__38495: http://hjb:38495/
+    host_hjb__39301: http://hjb:39301/
+    host_hjb__43435: http://hjb:43435/
+    host_hjb__44513: http://hjb:44513/
+    host_hjb__45021: http://hjb:45021/
+    host_hjb__45175: http://hjb:45175/
+    host_hjb__45657: http://hjb:45657/
+    host_hjb__46453: http://hjb:46453/
+    host_hjb__46485: http://hjb:46485/
+rosversion: '1.16.0
+
+  '
+run_id: 50a2d554-5088-11ef-bd86-110eb1fcb3e3
