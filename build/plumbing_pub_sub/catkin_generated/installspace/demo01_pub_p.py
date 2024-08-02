@@ -21,12 +21,21 @@
 
 """
 #1.导包 
+import os
+import sys  
+path=os.path.abspath(".")
+sys.path.insert(0,path + "/home/yunxia/demo03/src/plumbing_pub_sub/scripts")
 import rospy
 from std_msgs.msg import String
+import tools
 
 if __name__ == "__main__":
     #2.初始化 ROS 节点:命名(唯一)
     rospy.init_node("talker_p")
+    # path=os.path.abspath(".")
+    # rospy.loginfo("执行时参考的路径：%s",path)
+  
+    rospy.loginfo("num=%d",tools.num)
     #3.实例化 发布者 对象
     pub = rospy.Publisher("chatter",String,queue_size=10)
     #4.组织被发布的数据，并编写逻辑发布数据

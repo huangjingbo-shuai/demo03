@@ -179,6 +179,7 @@ catkin_install_python(PROGRAMS
   scripts/demo02_sub_p.py
   scripts/demo03_pub_person_p.py
   scripts/demo04_sub_person_p.py
+  scripts/tools.py
 
   DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
 )

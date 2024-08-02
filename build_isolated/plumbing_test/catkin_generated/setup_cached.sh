@@ -7,8 +7,3 @@
 # new environment variables
 
 # modified environment variables
-export CMAKE_PREFIX_PATH="/home/yunxia/demo03/devel_isolated/plumbing_test:$CMAKE_PREFIX_PATH"
-export LD_LIBRARY_PATH="/home/yunxia/demo03/devel_isolated/plumbing_test/lib:$LD_LIBRARY_PATH"
-export PKG_CONFIG_PATH="/home/yunxia/demo03/devel_isolated/plumbing_test/lib/pkgconfig:$PKG_CONFIG_PATH"
-export ROSLISP_PACKAGE_DIRECTORIES="/home/yunxia/demo03/devel_isolated/plumbing_test/share/common-lisp:$ROSLISP_PACKAGE_DIRECTORIES"
-export ROS_PACKAGE_PATH="/home/yunxia/demo03/src/plumbing_test:$ROS_PACKAGE_PATH"

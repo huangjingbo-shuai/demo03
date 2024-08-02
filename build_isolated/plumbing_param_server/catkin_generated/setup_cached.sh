@@ -7,4 +7,3 @@
 # new environment variables
 
 # modified environment variables
-export PWD='/home/yunxia/demo03/build_isolated/plumbing_param_server'
